@@ -54,8 +54,9 @@ resource "aws_launch_configuration" "pic-launch" {
 sudo apt -get update
 sudo apt install -y apache2
 sudo service apache2 start
+sudo chown -R $USER:$USER /var/www/html
 sudo git clone https://github.com/AbdulBhashith/codincity.git
-sudo mv codincity/* /var/www/html
+sudo mv codincity/* /var/www/index.html
 EOF
 
 # This device contains homePath
